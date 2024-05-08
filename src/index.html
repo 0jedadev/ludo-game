@@ -11,25 +11,29 @@
 <body>
     <canvas class="webgl"></canvas>
 
-    <button class="roolDiceButton" id="rollDiceButton">Lançar Dado</button>
-    <button class="resetDiceButton" id="resetDiceButton">Resetar Dado</button>
-    <button class="blue-pino-1" id="blue-pino-1">Jogador 1 Azul</button>
-    <button class="green-pino-1" id="green-pino-1">Jogador 1 Verde</button>
-    <button class="red-pino-1" id="red-pino-1">Jogador 1 Vermelho</button>
-    <button class="yellow-pino-1" id="yellow-pino-1">Jogador 1 Amarelo</button>
+    <div class="container-buttons-initGame">
+        <button class="roolDiceButton invisible" id="rollDiceButton">Jogar Dado</button>
+    </div>
 
-        <button class="pino-1" id="pino-1">Pino 1</button>
-        <button class="pino-2" id="pino-2">Pino 2</button>
-        <button class="pino-3" id="pino-3">Pino 3</button>
-        <button class="pino-4" id="pino-4">Pino 4</button>
+    <button class="resetDiceButton invisible" id="resetDiceButton">Resetar Dado</button>
 
+    <div class="container-buttons-pino">
+        <button class="invisible" id="pino-1">Pino 1</button>
+        <button class="invisible " id="pino-2">Pino 2</button>
+        <button class="invisible" id="pino-3">Pino 3</button>
+        <button class="invisible" id="pino-4">Pino 4</button>
+    </div>
 
-    <button class="init-game" id="init-game">Iniciar Jogo</button>
+    <div class="container-buttons-initGame">
+        <button class="active" id="init-game">Iniciar Jogo</button>
+    </div>
 
-        <button class="movePin" id="movePin">Mover Pino Atual</button>
-        <button class="newPin" id="newPin">Novo Pino</button>
+    <div class="container-buttons-move">
+        <button class="invisible" id="movePin">Mover Pino Atual</button>
+        <button class="invisible" id="newPin">Novo Pino</button>
+    </div>
 
-    <script type="module" src="./script.js"></script>
+    <script type="module" src="./index.js"></script>
 
 </body>
 

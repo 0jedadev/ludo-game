@@ -3,6 +3,11 @@
     padding: 0;
 }
 
+:root {
+    --hover-color: #636363; /* Cor padrão */
+    --background-color: #838181;
+}
+
 html,
 body {
     overflow: hidden;
@@ -16,14 +21,10 @@ body {
 }
 
 .roolDiceButton {
-    position: absolute;
-    /* Posicionamento absoluto para sobrepor o canvas */
-    top: 20px;
-    /* Posição do topo */
-    left: 20px;
-    /* Posição da esquerda */
-    z-index: 100;
-    /* Garante que ficará acima do canvas */
+}
+
+.roolDiceButton:hover {
+    background-color: var(--hover-color);
 }
 
 .resetDiceButton {
@@ -32,49 +33,6 @@ body {
     top: 20px;
     /* Posição do topo */
     left: 150px;
-    /* Posição da esquerda */
-    z-index: 100;
-    /* Garante que ficará acima do canvas */
-}
-.pino-1 {
-    position: absolute;
-    /* Posicionamento absoluto para sobrepor o canvas */
-    top: 70px;
-    /* Posição do topo */
-    left: 20px;
-    /* Posição da esquerda */
-    z-index: 100;
-    /* Garante que ficará acima do canvas */
-}
-
-.pino-2 {
-    position: absolute;
-    /* Posicionamento absoluto para sobrepor o canvas */
-    top: 100px;
-    /* Posição do topo */
-    left: 20px;
-    /* Posição da esquerda */
-    z-index: 100;
-    /* Garante que ficará acima do canvas */
-}
-
-.pino-3 {
-    position: absolute;
-    /* Posicionamento absoluto para sobrepor o canvas */
-    top: 130px;
-    /* Posição do topo */
-    left: 20px;
-    /* Posição da esquerda */
-    z-index: 100;
-    /* Garante que ficará acima do canvas */
-}
-
-.pino-4{
-    position: absolute;
-    /* Posicionamento absoluto para sobrepor o canvas */
-    top: 160px;
-    /* Posição do topo */
-    left: 20px;
     /* Posição da esquerda */
     z-index: 100;
     /* Garante que ficará acima do canvas */
@@ -116,3 +74,63 @@ body {
     z-index: 100;
     /* Garante que ficará acima do canvas */
 }
+
+.h1-center {
+    position: absolute;
+    /* Posicionamento absoluto para sobrepor o canvas */
+    width: 100px;
+    height: 50px;
+    top: 400px;
+    /* Posição do topo */
+    left: 20px;
+    /* Posição da esquerda */
+    z-index: 100;
+    /* Garante que ficará acima do canvas */
+}
+
+.invisible {
+    display: none;
+}
+
+/* Classe para estilos aplicados quando o botão deve estar visível e clicável */
+.active {
+    /* position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    background-color: var(--background-color);
+    z-index: 100;
+    width: 10%;
+    color: #f1f1f1; /* White text */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.active:hover {
+    background-color: var(--hover-color);
+}
+
+.container-buttons-pino {
+    display: flex;
+    justify-content: center; /* Alinha os botões horizontalmente ao centro */
+    gap: 10px; /* Dá um espaçamento entre os botões */
+    padding-top: 20px;
+}
+
+.container-buttons-initGame {
+    display: flex;
+    justify-content: center; /* Alinha os botões horizontalmente ao centro */
+    gap: 10px; /* Dá um espaçamento entre os botões */
+    padding-top: 20px;
+}
+
+.container-buttons-move {
+    display: flex;
+    justify-content: center; /* Alinha os botões horizontalmente ao centro */
+    gap: 10px; /* Dá um espaçamento entre os botões */
+    padding-top: 20px;
+}
+

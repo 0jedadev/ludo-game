@@ -2,7 +2,7 @@
 
 import * as THREE from 'three'
 import * as CANNON from 'cannon';
-import CameraController from '../../Controllers/ControllersEngine';
+
 class GameLogicEngine {
     constructor(graphicEngine, physicsEngine, configsEngine) {
         this.graphicEngine = graphicEngine;

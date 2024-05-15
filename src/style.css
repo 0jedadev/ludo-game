@@ -4,8 +4,8 @@
 }
 
 :root {
-    --hover-color: #636363; /* Cor padrão */
-    --background-color: #838181;
+    --hover-color: #fb7f69; /* Cor padrão */
+    --background-color: #ff6347;
 }
 
 html,
@@ -18,9 +18,6 @@ body {
     top: 0;
     left: 0;
     outline: none;
-}
-
-.roolDiceButton {
 }
 
 .roolDiceButton:hover {
@@ -109,6 +106,16 @@ body {
     font-size: 18px;
 }
 
+.activate {
+    z-index: 100;
+    width: 10%;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
 .active:hover {
     background-color: var(--hover-color);
 }
@@ -134,3 +141,76 @@ body {
     padding-top: 20px;
 }
 
+.container {
+    width: 100%;
+    position: absolute;
+    z-index: 100;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 30%;
+}
+
+.container-initial {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.427); /* conteúdo semi-transparente */
+    backdrop-filter: blur(4px);
+}
+
+.container-initial__title {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container-initial__button {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titleGaming {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    font-family: "Roboto", sans-serif;
+}
+
+.botao {
+    width: 150px;
+    display: inline-flex; /* Melhora a centralização do conteúdo */
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold; /* Torna o texto mais perceptível */
+    color: white; /* Melhor contraste com o fundo */
+    background-color: #ff6347;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Adiciona sombra para profundidade */
+    transition: all 0.3s ease; /* Suaviza a transição de estados */
+}
+
+.botao:hover {
+    background-color: #fc846e;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2); /* Sombra mais proeminente para efeito elevado */
+    transform: translateY(-2px); /* Efeito 3D suave */
+}
+.botao:active {
+    background-color: #e55335; /* Cor mais escura ao clicar */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Sombra retraída */
+    transform: translateY(1px); /* Efeito pressionado */
+}

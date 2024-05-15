@@ -4,13 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ludo Game ThreeJS</title>
-    <link rel="shortcut icon" type="image/png" href="../static/ludoIMG.png" />
+    <title>3D Boards Games</title>
+    <link rel="icon" type="image/png" href="/ludoIMG.png" />
     <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
     <canvas class="webgl"></canvas>
+
+    <div class="container invisible">
+    <div class="container-initial">
+        <div class="container-initial__title">
+        <h1 class="titleGaming">Bem vindo ao Jogo de Tabuleiros 3D</h1>
+        <h3 class="titleGaming">Escolha o Jogo</h3>
+        </div>
+        <div class="container-initial__button">
+        <button class="botao" id="botaoLudo">Ludo</button>
+        <button  class="botao" id="botaoJogoDaVelha">Jogo da Velha</button>
+        </div>
+    </div>
+    </div>
+
 
     <div class="container-buttons-initGame">
         <button class="roolDiceButton invisible" id="rollDiceButton">Jogar Dado</button>
@@ -26,16 +40,20 @@
     </div>
 
     <div class="container-buttons-initGame">
-        <button class="active" id="init-game">Iniciar Jogo</button>
+        <button class="invisible" id="init-game">Iniciar Jogo</button>
+
     </div>
 
+    <div class="container-buttons-initGame">
+        <button id="restart-game" class="invisible">Jogar Novamente</button>
+        </div>
+        
     <div class="container-buttons-move">
         <button class="invisible" id="movePin">Mover Pino Atual</button>
         <button class="invisible" id="newPin">Novo Pino</button>
     </div>
 
     <script type="module" src="./index.js"></script>
-
 </body>
 
 </html>

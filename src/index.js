@@ -1,71 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Game Boards</title>
-    <link rel="icon" type="image/png" href="/ludoIMG.png" />
-    <link rel="stylesheet" href="./style.css">
-</head>
-
-<body>
-    <canvas class="webgl"></canvas>
-
-    <div class="container invisible">
-        <div class="container-initial">
-            <div class="container-initial__title">
-                <h1 class="titleGaming">Bem vindo ao Jogo de Tabuleiros 3D</h1>
-                <h3 class="titleGaming">Escolha o Jogo</h3>
-            </div>
-            <div class="container-initial__button">
-                <button class="botao" id="botaoLudo">Ludo</button>
-                <button class="botao" id="botaoJogoDaVelha">Jogo da Velha</button>
-                <button class="botao" id="botaoJogoDaDama">Jogo da Dama</button>
-            </div>
-        </div>
-    </div>
 
 
-    <div class="container-buttons-initGame">
-        <button class="roolDiceButton invisible" id="rollDiceButton">Jogar Dado</button>
-    </div>
+import ConfigsEngine from "./LudoGame/Configs/configs";
+import GraphicEngine from "./LudoGame/GraphicEngine/GraphicEngine";
+import PhysicsEngine from "./LudoGame/PhysicsEngine/PhysicsEngine";
+import GameLogicEngine from './LudoGame/GameLogic/GameLogic';
+import GraphicEngineTicTacToe from "./TicTacToeGame/GraphicEngine/GraphicEngineTicTacToe";
+import GameEngineTicTacToe from "./TicTacToeGame/GameLogic/GameEngineTicTacToe";
+import FontsEngine from "./Fonts/FontsEngine";
+import GraphicEngineDama from "./DamaGame/GraphicEngine/GraphicEngineDama";
+import GameLogicEngineDama from "./DamaGame/GameLogicEngine/GameLogicEngineDama";
 
-    <button class="resetDiceButton invisible" id="resetDiceButton">Resetar Dado</button>
 
-    <div class="container-buttons-pino">
-        <button class="invisible" id="pino-1">Pino 1</button>
-        <button class="invisible " id="pino-2">Pino 2</button>
-        <button class="invisible" id="pino-3">Pino 3</button>
-        <button class="invisible" id="pino-4">Pino 4</button>
-    </div>
+const configsEngine = new ConfigsEngine();
+configsEngine.x = 0;
+configsEngine.y = 4;
+configsEngine.z = 12;
+const graphicEngine = new GraphicEngine(configsEngine);
+const physicsEngine = new PhysicsEngine(configsEngine);
+const fontsEngine = new FontsEngine(graphicEngine, configsEngine);
+const gameLogicEngine = new GameLogicEngine(graphicEngine, physicsEngine, configsEngine);
+const graphicEngineTicTacToe = new GraphicEngineTicTacToe(graphicEngine, configsEngine);
+const gameEngineTicTacToe = new GameEngineTicTacToe(fontsEngine, graphicEngine, gameLogicEngine, graphicEngineTicTacToe, configsEngine);
+const graphicEngineDama = new GraphicEngineDama(graphicEngine, configsEngine)
+const gameLogicEngineDama = new GameLogicEngineDama(fontsEngine, graphicEngine, gameLogicEngine, graphicEngineTicTacToe, configsEngine)
 
-    <div class="container-buttons-initGame">
-        <button class="invisible" id="init-game">Iniciar Jogo</button>
+//ThreeJS LudoGame
+graphicEngine.InitLudo();
 
-    </div>
 
-    <div class="container-buttons-initGame">
-        <button id="restart-game" class="invisible">Jogar Novamente</button>
-    </div>
+//Cannon LudoGame
+physicsEngine.InitPhysics();
 
-    <div class="container-buttons-initGame">
-        <button id="mode-player-vs-player" class="invisible">Player vs Player</button>
-        <button id="mode-player-vs-ai" class="invisible">Player vs IA</button>
-    </div>
 
-    <div class="container-buttons-initGame">
-        <button id="mode-facil" class="invisible">Modo Facil</button>
-        <button id="mode-mediano" class="invisible">Modo Mediano</button>
-        <button id="mode-dificil" class="invisible">Modo Dificil</button>
-    </div>
+//Logic LudoGame
+gameLogicEngine.InitGameLogic();
 
-    <div class="container-buttons-move">
-        <button class="invisible" id="movePin">Mover Pino Atual</button>
-        <button class="invisible" id="newPin">Novo Pino</button>
-    </div>
 
-    <script type="module" src="./index.js"></script>
-</body>
+//THREEJS Jogo da Velha
+graphicEngineTicTacToe.init();
 
-</html>
+//Logi Jodo da Velha
+gameEngineTicTacToe.start();
+
+
+//THREEJS Jogo da Dama
+graphicEngineDama.createBoard();
+
+gameLogicEngineDama.start();

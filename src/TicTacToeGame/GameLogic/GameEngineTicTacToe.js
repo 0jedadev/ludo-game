@@ -61,6 +61,10 @@ class GameEngineTicTacToe {
     startPlayerVsPlayer() {
         this.isAIGame = false;
         this.playerStart();
+        this.playerVSplayer.classList.remove('active');
+        this.playerVSplayer.classList.add('invisible');
+        this.playerVSia.classList.remove('active');
+        this.playerVSia.classList.add('invisible');
     }
 
     showDifficultyOptions() {

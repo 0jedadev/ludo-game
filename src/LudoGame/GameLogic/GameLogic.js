@@ -16,6 +16,7 @@ class GameLogicEngine {
         this.diceButton = document.getElementById('rollDiceButton');
         this.ludoButton = document.getElementById('botaoLudo');
         this.jogoDaVelhaButton = document.getElementById('botaoJogoDaVelha');
+        this.jogoDaDamaButton = document.getElementById('botaoJogoDaDama');
         this.setupEventListeners();
         this.faceNormals = [
             new THREE.Vector3(0, 1, 0),  // Face superior

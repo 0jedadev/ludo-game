@@ -496,6 +496,7 @@ class GraphicEngine {
         directionalLightFolder.close();
 
     }
+    
     displayNextText = () => {
         if (this.configs.textQueue.length > 0 && !this.configs.isTextBeingDisplayed) {
             this.configs.isTextBeingDisplayed = true;
@@ -559,6 +560,7 @@ class GraphicEngine {
             );
         }
     };
+
 
     fonts = (textFont, color, callback, secondCallback, x, y, z) => {
         console.log(textFont, color);

@@ -4,8 +4,8 @@ const sharedObjects = {
     cross: {},
     fonts: {},
     bases: {
-        'initialBaseX': { x: 11, y: 0, z: -2 },
-        'initialBase0': { x: 19, y: 0, z: -2 },
+        'initialBaseX': { x: 11, y: 0, z: -6 },
+        'initialBase0': { x: 19, y: 0, z: -6 },
         '1': { x: 13, y: 0, z: -2 },
         '2': { x: 15, y: 0, z: -2 },
         '3': { x: 17, y: 0, z: -2 },
@@ -19,3 +19,4 @@ const sharedObjects = {
 };
 
 export default sharedObjects; 
+
